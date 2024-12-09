@@ -1,0 +1,4 @@
+SELECT COUNT(*) AS total_posts
+FROM wp_posts AS p
+JOIN wp_users AS u ON p.post_author = u.ID
+WHERE p.post_status = 'publish' AND u.user_login = 'hubert';
