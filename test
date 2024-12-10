@@ -1,4 +1,6 @@
-SELECT COUNT(*) AS total_posts
-FROM wp_posts AS p
-JOIN wp_users AS u ON p.post_author = u.ID
-WHERE p.post_status = 'publish' AND u.user_login = 'hubert';
+SELECT wp_posts.ID, wp_posts.post_title, wp_posts.post_date
+FROM wp_posts
+JOIN wp_users ON wp_posts.post_author = wp_users.ID
+WHERE wp_posts.post_title LIKE '%wp%'
+ AND wp_posts.post_status = 'publish'
+ AND wp_users.user_login = 'Hubert' ;
