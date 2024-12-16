@@ -3,9 +3,9 @@ SELECT
     COUNT(o.OsobaID) AS LiczbaUczniow
 FROM 
     Klasy k
-LEFT JOIN 
-    OsobaKlasa uk ON k.KlasaID = uk.KlasaID
-RIGHT JOIN 
-    Osoby o ON uk.OsobaID = o.OsobaID
+FULL OUTER JOIN 
+    OsobaKlasa uk ON k.KlasaID = uk.KlasaID -- Zmodyfikowana linia
+FULL OUTER JOIN 
+    Osoby o ON uk.OsobaID = o.OsobaID -- Zmodyfikowana linia
 GROUP BY 
     k.NazwaKlasy;
