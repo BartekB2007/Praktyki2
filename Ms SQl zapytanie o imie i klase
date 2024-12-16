@@ -5,8 +5,8 @@ SELECT
 FROM 
     Osoby o
 LEFT JOIN 
-    OsobaKlasa uk ON o.OsobaID = uk.OsobaID -- Tu nastąpiła nazwa
+    OsobaKlasa uk ON o.OsobaID = uk.OsobaID 
 LEFT JOIN 
-    Klasy k ON uk.KlasaID = k.KlasaID
+    Klasy k ON uk.KlasaID = k.KlasaID -- Tu nastąpiła zmiana
 WHERE 
     o.Imie = 'Jan'; -- Podaj wybrane imię
