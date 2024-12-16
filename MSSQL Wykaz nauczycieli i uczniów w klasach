@@ -1,0 +1,19 @@
+SELECT 
+    k.NazwaKlasy,
+    o.Imie,
+    o.Nazwisko,
+    o.TypOsoby
+FROM 
+    Klasy k
+LEFT JOIN 
+    OsobaKlasa uk ON k.KlasaID = uk.KlasaID
+LEFT JOIN 
+    Osoby o ON uk.OsobaID = o.OsobaID
+LEFT JOIN 
+    NauczycieleKlasy nk ON k.KlasaID = nk.KlasaID
+LEFT JOIN 
+    Osoby o2 ON nk.NauczycielID = o2.OsobaID
+WHERE 
+    k.NazwaKlasy = '1a' -- Możesz zmienić nazwę klasy
+ORDER BY 
+    o.TypOsoby DESC, o.Nazwisko;
