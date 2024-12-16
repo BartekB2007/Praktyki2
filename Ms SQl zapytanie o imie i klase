@@ -1,0 +1,12 @@
+SELECT 
+    o.Imie, 
+    o.Nazwisko, 
+    k.NazwaKlasy
+FROM 
+    Osoby o
+JOIN 
+    OsobaKlasa uk ON o.OsobaID = uk.OsobaID
+JOIN 
+    Klasy k ON uk.KlasaID = k.KlasaID
+WHERE 
+    o.Imie = 'Jan'; -- Podaj wybrane imię
