@@ -1,11 +1,11 @@
 SELECT 
     o.Imie, 
     o.Nazwisko, 
-    ISNULL(k.NazwaKlasy, 'Brak klasy') AS NazwaKlasy
+    ISNULL(k.NazwaKlasy, 'Brak klasy') AS NazwaKlasy -- TU nastąpiła zmiana
 FROM 
     Osoby o
 LEFT JOIN 
-    OsobaKlasa uk ON o.OsobaID = uk.OsobaID
+    OsobaKlasa uk ON o.OsobaID = uk.OsobaID -- Tu nastąpiła nazwa
 LEFT JOIN 
     Klasy k ON uk.KlasaID = k.KlasaID
 WHERE 
