@@ -1,0 +1,11 @@
+SELECT 
+    ISNULL(k.NazwaKlasy, 'Brak klasy') AS NazwaKlasy,
+    COUNT(o.OsobaID) AS LiczbaUczniow
+FROM 
+    Klasy k
+LEFT JOIN 
+    OsobaKlasa uk ON k.KlasaID = uk.KlasaID
+RIGHT JOIN 
+    Osoby o ON uk.OsobaID = o.OsobaID
+GROUP BY 
+    k.NazwaKlasy;
